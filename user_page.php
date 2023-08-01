@@ -1,6 +1,7 @@
 <?php
 
-@include 'connect.php';
+@include 'lib/connect.php';
+@include 'lib/loadprofile.php';
 
 session_start();
 
@@ -26,9 +27,8 @@ if(!isset($_SESSION['user_name'])){
 <div class="container">
 
    <div class="content">
-      <h3>Hi, <span>Student</span></h3>
-      <h1>Welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
-      <p>This is a student page.</p>
+      <h1>Hi, <span><?php echo $_SESSION['first_name'] ?></span> !</h1><br>
+      <p>Welcome Back to the HKIT Project Showcase System.</p>
       <a href="index.php" class="btn">login</a>
       <a href="register_form.php" class="btn">register</a>
       <a href="logout.php" class="btn">logout</a>

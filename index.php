@@ -1,6 +1,6 @@
 <?php
 
-@include 'connect.php';
+@include 'lib/connect.php';
 
 session_start();
 
@@ -31,6 +31,11 @@ if(isset($_POST['submit'])){
 
          $_SESSION['user_name'] = $row['username'];
          header('location:user_page.php');
+
+      }elseif($row['user_type'] == 'guest'){
+
+         $_SESSION['user_name'] = $row['username'];
+         header('location:guest_page.php');
 
       }
    }else{

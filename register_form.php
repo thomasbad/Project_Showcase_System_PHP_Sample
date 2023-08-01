@@ -1,6 +1,6 @@
 <?php
 
-@include 'connect.php';
+@include 'lib/connect.php';
 
 if(isset($_POST['submit'])){
 
