@@ -1,5 +1,8 @@
 <?php
-
-$conn = mysqli_connect('localhost','admin','adminpassword','showcasedb');
-
+$dbservername="localhost";
+$dbuser="admin";
+$dbpass="adminpassword";
+$dbname="showcasedb";
+global $conn;
+$conn = mysqli_connect($dbservername,$dbuser,$dbpass,$dbname);
 ?>

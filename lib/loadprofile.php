@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 //Load user_profile detail
 $username = $_SESSION['user_name'];
 $selectprofile = "SELECT * FROM user_profile WHERE username = '$username'";

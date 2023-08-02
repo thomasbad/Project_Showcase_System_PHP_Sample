@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
       
       if($row['user_type'] == 'admin'){
 
-         $_SESSION['admin_name'] = $row['username'];
+         $_SESSION['user_name'] = $row['username'];
          header('location:admin_page.php');
 
       }elseif($row['user_type'] == 'student'){
