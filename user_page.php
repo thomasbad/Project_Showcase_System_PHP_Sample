@@ -41,7 +41,7 @@ if(!isset($_SESSION['user_name'])){
       <br> 
       Edit Profile
       </a>
-      <a href="register_form.php" class="btn">
+      <a href="showcase.php" class="btn">
       <img src='img/showcase.svg'>
       <br>
       Project Showcase</a>

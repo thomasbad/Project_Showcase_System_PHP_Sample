@@ -49,7 +49,7 @@ if(!isset($_SESSION['user_name'])){
       <label class="label" style="text-align:left">Introduction: </label>
       <input class="input is-primary" type="text" name="self_intro" required placeholder="Enter the introduction for yourself" value="<?php echo $_SESSION['self_intro'] ?>">
       <input type="submit" name="editprofile" value="Update My Profile" class="form-btn">
-      <input type="button" value="Cancel" onclick="history.back()">
+      <input type="button" value="Cancel" onclick="history.back()" class="cancel-btn">
    </form>
 
 </div>
