@@ -52,16 +52,21 @@ if(isset($_POST['submit'])){
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>login form</title>
-
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
    <link rel="stylesheet" href="style.css">
 
 </head>
+
+<header>
+&emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
+</header>
+
 <body>
    
-<div class="form-container">
+<div class="form-container" >
 
    <form action="" method="post">
-      <h3>login now</h3>
+      <h3 style='text-align:center'>login now</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
