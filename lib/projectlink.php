@@ -8,8 +8,8 @@ if(!isset($_SESSION))
 $username = $_SESSION['user_name'];
 $selectdoc = "SELECT * FROM document_upload WHERE username = '$username'";
 $docresult = mysqli_query($conn, $selectdoc);
-if(mysqli_num_rows($profileresult) > 0){
-   $row = mysqli_fetch_array($profileresult);
+if(mysqli_num_rows($docresult) > 0){
+   $row = mysqli_fetch_array($docresult);
    $_SESSION['doc_username'] = $row['username'];
    $_SESSION['doc_link'] = $row['fileid'];
    $_SESSION['proj_name'] = $row['project_showcase'];

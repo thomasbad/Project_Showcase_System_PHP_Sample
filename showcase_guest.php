@@ -12,9 +12,9 @@ if(!isset($_SESSION['user_name'])){
     header('location:index.php');
  }
 
- if($_SESSION['user_type'] != 'student'){
-    header('location:index.php');
- }
+if($_SESSION['user_type'] != 'guest'){
+  header('location:index.php');
+}
 
 ?>
 
@@ -78,8 +78,7 @@ else {
 ?>
 </table>
 </div>
-<button class="button is-primary is-fullwidth"><a style="color: white;" href="editproject.php">Edit My Project Information</button>
-<button class="button is-fullwidth"><a style="color: black;" href="user_page.php">Back to Previous Page</button>
+<button class="button is-primary is-fullwidth"><a style="color: black;" href="guest_page.php">Back to Previous Page</button>
 </div>
 </body>
 

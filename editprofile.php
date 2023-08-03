@@ -10,6 +10,10 @@ if(!isset($_SESSION['user_name'])){
    header('location:index.php');
 }
 
+if($_SESSION['user_type'] != 'student'){
+    header('location:index.php');
+ } 
+
 ?>
 
 <!DOCTYPE html>

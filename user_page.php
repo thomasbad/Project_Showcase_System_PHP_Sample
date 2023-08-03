@@ -8,7 +8,11 @@ if(!isset($_SESSION))
     session_start(); 
 }
 
-if(!isset($_SESSION['user_name'])){
+if(!isset($_SESSION['user_name'] )){
+   header('location:index.php');
+}
+
+if($_SESSION['user_type'] != 'student'){
    header('location:index.php');
 }
 
@@ -45,6 +49,10 @@ if(!isset($_SESSION['user_name'])){
       <img src='img/showcase.svg'>
       <br>
       Project Showcase</a>
+      <a href="changepwd.php" class="btn">
+      <img src='img/changepwd.svg'>
+      <br>
+      Change Password</a>
       <a href="logout.php" class="btn">
       <img src='img/logout.svg'>
       <br>
