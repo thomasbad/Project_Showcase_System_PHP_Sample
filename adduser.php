@@ -204,7 +204,7 @@ if(isset($_POST['submit'])){
          <option value="admin">Administrator</option>
       </select>
       <input type="submit" name="submit" value="Add User" class="form-btn">
-      <button class="button" style="width: 450px"><a style="color: black;" href="admin_page.php">Back to Admin Page</button>
+      <button class="button" style="width: 450px" onclick="history.back()">Back to Admin Page</button>
    </form>
 
 </div>

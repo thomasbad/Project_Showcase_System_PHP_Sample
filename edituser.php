@@ -43,6 +43,7 @@
 <html>
 <head>
 <title>Edit User Profile</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <style>
@@ -73,12 +74,12 @@ if($stmt->rowCount() > 0)
 	{
 		extract($row);
 		?>
-		<div class="col-xs-3" >
-			<h4 class="page-header" style="background-color:cadetblue" align="center"><?php echo $firstname." ".$lastname."<br>".$username."<br>".$course_name; ?></h3>
+		<div class="col-xs-3" style="height: 500px">
+			<div style="height: 100px"><h4 class="page-header" style="background-color:cadetblue" align="center"><?php echo $firstname." ".$lastname."<br>".$username."<br>".$course_name; ?></h3></div>
 			<img src="img/profile_pic.png" class="img-responsive" /><hr>
 			<p class="page-header" align="center">
 			<span>
-			<a class="btn btn-primary" href="editform.php?edit_id=<?php echo $row['username']; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 
+			<a class="btn btn-primary" href="edituserform.php?edit_id=<?php echo $row['username']; ?>"><span class="glyphicon glyphicon-pencil"></span> Edit</a> 
 			<a class="btn btn-warning" href="?delete_id=<?php echo $row['username']; ?>" title="click for delete" onclick="return confirm('Are You Sure You Want To Delete This User?')"><span class="glyphicon glyphicon-trash"></span> Delete</a>
 			</span>
 			</p>

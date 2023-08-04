@@ -22,21 +22,38 @@ if($_SESSION['user_type'] != 'admin'){
 
  if(isset($_GET['edit_id']) && !empty($_GET['edit_id']))
  {
-    $id = $_GET['edit_id'];
-    $stmt_edit = $DB_con->prepare('SELECT username, description, userprofile FROM users WHERE userid =:uid');
-    $stmt_edit->execute(array(':uid'=>$id));
-    $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
-    extract($edit_row);
+    $username = $_GET['edit_id'];
  }
  else
  {
-    header("Location: index.php");
+    header("Location: admin_page.php");
  }
 
+$selectprofile = "SELECT * FROM user_profile WHERE username = '$username'";
+$profileresult = mysqli_query($conn, $selectprofile);
+if(mysqli_num_rows($profileresult) > 0){
+   $row = mysqli_fetch_array($profileresult);
+   $ffname = $row['firstname'];
+   $mmname = $row['midname'];
+   $llname = $row['lastname'];
+   $ddname = $row['department_name'];
+   $ccname = $row['course_name'];
+   $ggradyr = $row['grad_year'];
+}else{
+   $error[] = 'Cannot load user profile';
+};
+
+$selectacc = "SELECT * FROM user_account WHERE username = '$username'";
+$accresult = mysqli_query($conn, $selectacc);
+if(mysqli_num_rows($accresult) > 0){
+   $row = mysqli_fetch_array($accresult);
+   $ppass = $row['password'];
+}else{
+   $error[] = 'Cannot load user account';
+};
 
 if(isset($_POST['submit'])){
 
-   $username = $_POST['username'];
    $pass = $_POST['password'];
    $cpass = $_POST['cpassword'];
    $fname = $_POST['fname'];
@@ -59,22 +76,20 @@ if(isset($_POST['submit'])){
       $cname = NULL;
    }
 
-   if(mysqli_num_rows($result) > 0){
-
-      $error[] = 'user already exist!';
-
-   }else{
-
       if($pass != $cpass){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_profile(username, firstname, midname, lastname, department_name, course_name, grad_year, show_profile) VALUES('$username','$fname','$mname','$lname', '$dname', '$cname', '$gradyr', '1')";
-         $insert2 = "INSERT INTO user_account(username, password, user_type) VALUES('$username', '$cpass', '$user_type')";
+         $insert = "UPDATE user_profile SET firstname = '$fname', midname = '$mname', lastname = '$lname', department_name = '$dname', course_name = '$cname', grad_year = '$gradyr' WHERE username = '$username'";
+         $insert2 = "UPDATE user_account SET password = '$cpass', user_type = '$user_type' WHERE username = '$username'";
          mysqli_query($conn, $insert);
          mysqli_query($conn, $insert2);
-         header('location:admin_page.php'); 
+         ?>
+                <script>
+				alert('User Profile Update Successfully !');
+				window.location.href='edituser.php';
+				</script>
+                <?php 
       }
-   }
 };
 
 
@@ -103,7 +118,7 @@ if(isset($_POST['submit'])){
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>Add New User</h3>
+      <h3>Edit User Profile</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -111,9 +126,9 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="text" name="fname" required placeholder="Enter user's First Name">
-      <input type="text" name="mname" placeholder="Enter user's Middle Name">
-      <input type="text" name="lname" required placeholder="Enter user's Last Name">
+      <input type="text" name="fname" required placeholder="Enter user's First Name" value="<?php echo $ffname ?>">
+      <input type="text" name="mname" placeholder="Enter user's Middle Name" value="<?php echo $mmname ?>">
+      <input type="text" name="lname" required placeholder="Enter user's Last Name" value="<?php echo $llname ?>">
       <select id = "departmentlist" name="dname" required>
          <option selected disabled>-----Choose User's department-----</option>
          <option value="Art and Design">Art and Design</option>
@@ -202,9 +217,9 @@ if(isset($_POST['submit'])){
     <option value="2049">2049</option>
     <option value="2050">2050</option>
 </select>
-   <input type="text" name="username" required placeholder="Enter User's Login ID">
-      <input type="password" name="password" required placeholder="Enter User's password">
-      <input type="password" name="cpassword" required placeholder="Confirm User's password">
+   <input type="text" name="username" disabled placeholder="Enter User's Login ID" value="<?php echo $username ?>">
+      <input type="password" name="password" required placeholder="Change User's password" >
+      <input type="password" name="cpassword" required placeholder="Confirm password again" >
       
       <select name="user_type" required>
       <option selected disabled>-----Choose Account Permission-----</option>
@@ -212,8 +227,8 @@ if(isset($_POST['submit'])){
          <option value="student">Student</option>
          <option value="admin">Administrator</option>
       </select>
-      <input type="submit" name="submit" value="Add User" class="form-btn">
-      <button class="button" style="width: 450px"><a style="color: black;" href="admin_page.php">Back to Admin Page</button>
+      <input type="submit" name="submit" value="Update User Profile" class="form-btn">
+      <button class="button" style="width: 450px"><a style="color: black;" href="edituser.php">Back to Edit User Page</button>
    </form>
 
 </div>
