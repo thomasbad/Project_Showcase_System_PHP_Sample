@@ -22,52 +22,62 @@ if(!isset($_SESSION))
     $row = mysqli_fetch_assoc($sql);
     $res= $row['username'];
 
-    // Check if account exist
-    try {
-        $stmt = $conn->prepare($select);
-        //for you no need to pass parameter inside execute statement
-        $result = $stmt->execute();
-        //After executing the query store the result like below
-        $stmt->store_result();
-    } catch(PDOException $ex) {
-        echo $ex->getMessage();
-    }
-
-    //Now Check for the row count
-       //you have to check numrows >0 like this
-       if($stmt->num_rows==0) {
+    $updateproj = "SELECT * FROM document_upload WHERE username = '$username'";
+    $updateprojresult = mysqli_query($conn, $updateproj);
+    if(mysqli_num_rows($updateprojresult) == 0){
         $addnewproj = "INSERT INTO document_upload(username,file_id,project_showcase) VALUES ('$username','$projlink','$projtitle')";
-        $updatetable1 = "SELECT * FROM user_profile RIGHT JOIN document_upload ON user_profile.username = document_upload.username;";
-        die;
-    } else {
-        
-    if($res === $username)
-    {
-   
-       $update = "update document_upload set file_id='$projlink',project_showcase='$projtitle' where username='$username'";
-       $sql2=mysqli_query($conn,$update);
-        if($sql2)
+        $sql3=mysqli_query($conn,$addnewproj);
+        if($sql3)
         { 
            /*Successful*/
            ?>
-                <script>
-				alert('Profile Updated !');
-				window.location.href='showcase.php';
-				</script>
-                <?php 
+<script>
+    alert('Profile Updated !');
+    window.location.href = '../showcase.php';
+</script>
+<?php 
         }
         else
         {
            /*sorry your profile is not update*/
            ?>
-                <script>
-				alert('Error Ecountered, Profile would not update.');
-				window.location.href='showcase.php';
-				</script>
-                <?php 
+<script>
+    alert('Error Ecountered, Profile would not update.');
+    window.location.href = '../showcase.php';
+</script>
+<?php 
         }
-    }
- }   
+
+     }else if(mysqli_num_rows($updateprojresult) > 0){
+
+        $update = "UPDATE document_upload SET file_id='$projlink',project_showcase='$projtitle' WHERE username='$username'";
+       $sql2=mysqli_query($conn,$update);
+        if($sql2)
+        { 
+           /*Successful*/
+           ?>
+<script>
+    alert('Profile Updated !');
+    window.location.href = '../showcase.php';
+</script>
+<?php 
+        }
+        else
+        {
+           /*sorry your profile is not update*/
+           ?>
+<script>
+    alert('Error Ecountered, Profile would not update.');
+    window.location.href = '../showcase.php';
+</script>
+<?php 
+
+ } 
+     }else{
+        $error[] = 'Cannot load user profile';
+     }
+        
+   
 }
 
 

@@ -3,6 +3,20 @@
 @include 'lib/connect.php';
 @include 'lib/loadprofile.php';
 @include 'lib/projectlink.php';
+
+$DB_HOST = 'localhost';
+		$DB_USER = 'admin';
+		$DB_PASS = 'adminpassword';
+		$DB_NAME = 'showcasedb';
+		
+		try{
+			$DB_con = new PDO("mysql:host={$DB_HOST};dbname={$DB_NAME}",$DB_USER,$DB_PASS);
+			$DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		}
+		catch(PDOException $e){
+			echo $e->getMessage();
+		}
+
 if(!isset($_SESSION)) 
 { 
     session_start(); 
@@ -12,9 +26,20 @@ if(!isset($_SESSION['user_name'])){
     header('location:index.php');
  }
 
- if($_SESSION['user_type'] != 'student'){
-    header('location:index.php');
- }
+ if($_SESSION['user_type'] != 'admin'){
+  header('location:index.php');
+}
+
+if(isset($_GET['delete_proj']))
+	{
+		$stmt_select = $DB_con->prepare('SELECT username FROM document_upload WHERE username =:uid');
+		$stmt_select->execute(array(':uid'=>$_GET['delete_proj']));
+		$imgRow=$stmt_select->fetch(PDO::FETCH_ASSOC);
+		$stmt_delete = $DB_con->prepare('DELETE FROM document_upload WHERE username =:uid');
+		$stmt_delete->bindParam(':uid',$_GET['delete_proj']);
+		$stmt_delete->execute();
+		header("location:showcase_admin.php");
+	}
 
 ?>
 
@@ -47,6 +72,7 @@ if(!isset($_SESSION['user_name'])){
     <th>Introduction</th>
     <th>Project Name</th>
     <th>Document Link</th>
+    <th>Remove Project</th>
   </tr>
   <?php
   $sql = "SELECT * FROM user_profile RIGHT JOIN document_upload ON user_profile.username = document_upload.username;";
@@ -61,7 +87,10 @@ if(!isset($_SESSION['user_name'])){
             echo "<td>".$row['grad_year']."</td>";
             echo "<td>".$row['self_intro']."</td>";
             echo "<td>".$row['project_showcase']."</td>";
-            echo htmlspecialchars_decode("<td><button class=&quot;button is-link&quot;><a style=&quot;color: white;&quot; href=".$row['file_id'].">"."Download</a></button></td>");
+            echo htmlspecialchars_decode("<td><a style=&quot;color: white;&quot; href=&quot;".$row['file_id']."&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><button class=&quot;button is-link&quot;>Download</button></a></td>");
+            ?>
+            <td><button class="button is-danger"><a style="color: white" href="?delete_proj=<?php echo $row['username']; ?>" title="click for delete" onclick="return confirm('Are You Sure You Want To Remove The Project Information of This User From The System?')"><span class="glyphicon glyphicon-trash"></span>Delete</a></button></td>
+            <?php
             echo "</tr>";
         }
         echo "</table>";
@@ -79,7 +108,7 @@ else {
 </table>
 </div>
 <button class="button is-primary is-fullwidth"><a style="color: white;" href="editproject.php">Edit My Project Information</button>
-<button class="button is-fullwidth"><a style="color: black;" href="user_page.php">Back to Previous Page</button>
+<a style="color: black;" href="admin_page.php"><button class="button is-fullwidth">Back to Previous Page</button></a>
 </div>
 </body>
 

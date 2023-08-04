@@ -32,7 +32,7 @@ if($sql2)
            ?>
                 <script>
 				alert('Profile Updated !');
-				window.location.href='user_page.php';
+				window.location.href='../user_page.php';
 				</script>
                 <?php  
        }

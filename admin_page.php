@@ -50,7 +50,7 @@ if($_SESSION['user_type'] != 'admin'){
       <br> 
       Edit User
       </a>
-      <a href="projmanager.php" class="btn">
+      <a href="showcase_admin.php" class="btn">
       <img src='img/projmanager.svg'>
       <br>
       Project Manager</a>

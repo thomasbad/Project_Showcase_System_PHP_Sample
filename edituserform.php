@@ -144,44 +144,17 @@ if(isset($_POST['submit'])){
 
       <!----------------course selector------------------------------>
 
-      <select id="c0" name="cname" style='display:'>
-         <option selected disabled>-----Choose User's Course-----</option>
-      </select>
-
-      <select id="c1" name="cname" style='display:none'>
-         <option value="High Diploma of Art & Design">High Diploma of Art & Design</option>
-      </select>
-
-      <select id = "c2" name="cname" style='display:none'>
-         <option value="Bachelor of Creative Media">Bachelor of Creative Media</option>
-      </select>
-
-      <select id = "c3" name="cname" style='display:none'>
-         <option value="Bachelor of Environmental Science">Bachelor of Environmental Science</option>
-      </select>
-
-      <select id = "c4" name="cname" style='display:none'>
-         <option value="Advanced Diploma of Engineering">Advanced Diploma of Engineering</option>
-      </select>
-
-      <select id = "c5" name="cname" style='display:none'>
-         <option value="High Diploma of Human Resource Management">High Diploma of Human Resource Management</option>
-      </select>
-
-      <select id = "c6" name="cname" style='display:none'>
-         <option value="High Diploma of Performing Arts">High Diploma of Performing Arts</option>
-      </select>
-
-      <select id = "c7" name="cname" style='display:none'>
-         <option value="Research PhD students">Research PhD students</option>
-      </select>
-
-      <select id = "c8" name="cname" style='display:none'>
-         <option value="High Diploma of Science">High Diploma of Science</option>
-      </select>
-
-      <select id = "c9" name="cname" style='display:none'>
-         <option value="">NONE</option>
+      <select name="cname" style='display:'>
+         <option id="c0" selected disabled style='display:'>-----Choose User's Course-----</option>
+         <option id="c1" style='display:none' value="Higher Diploma of Art & Design">Higher Diploma of Art & Design</option>
+         <option id="c2" style='display:none' value="Bachelor of Creative Media">Bachelor of Creative Media</option>
+         <option id="c3" style='display:none' value="Bachelor of Environmental Science">Bachelor of Environmental Science</option>
+         <option id="c4" style='display:none' value="Advanced Diploma of Engineering">Advanced Diploma of Engineering</option>
+         <option id="c5" style='display:none' value="Higher Diploma of Human Resource Management">Higher Diploma of Human Resource Management</option>
+         <option id="c6" style='display:none' value="Higher Diploma of Performing Arts">Higher Diploma of Performing Arts</option>
+         <option id="c7" style='display:none' value="Research PhD students">Research PhD students</option>
+         <option id="c8" style='display:none' value="Higher Diploma of Science">Higher Diploma of Science</option>
+         <option id="c9" style='display:none' value="">NONE</option>
       </select>
 
       <!----------------end of course selector--------------------------->
@@ -341,6 +314,17 @@ document.getElementById('departmentlist').onchange = function () {
     document.getElementById('c7').style.display = 'none';
     document.getElementById('c8').style.display = '';
     document.getElementById('c9').style.display = 'none';
+  }else{ 
+   document.getElementById('c0').style.display = 'none';
+    document.getElementById('c1').style.display = 'none';
+    document.getElementById('c2').style.display = 'none';
+    document.getElementById('c3').style.display = 'none';
+    document.getElementById('c4').style.display = 'none';
+    document.getElementById('c5').style.display = 'none';
+    document.getElementById('c6').style.display = 'none';
+    document.getElementById('c7').style.display = 'none';
+    document.getElementById('c8').style.display = 'none';
+    document.getElementById('c9').style.display = '';
   }
 };
 

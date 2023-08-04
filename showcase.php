@@ -61,7 +61,7 @@ if(!isset($_SESSION['user_name'])){
             echo "<td>".$row['grad_year']."</td>";
             echo "<td>".$row['self_intro']."</td>";
             echo "<td>".$row['project_showcase']."</td>";
-            echo htmlspecialchars_decode("<td><button class=&quot;button is-link&quot;><a style=&quot;color: white;&quot; href=".$row['file_id'].">"."Download</a></button></td>");
+            echo htmlspecialchars_decode("<td><a style=&quot;color: white;&quot; href=&quot;".$row['file_id']."&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><button class=&quot;button is-link&quot;>Download</button></a></td>");
             echo "</tr>";
         }
         echo "</table>";
@@ -78,8 +78,8 @@ else {
 ?>
 </table>
 </div>
-<button class="button is-primary is-fullwidth"><a style="color: white;" href="editproject.php">Edit My Project Information</button>
-<button class="button is-fullwidth"><a style="color: black;" href="user_page.php">Back to Previous Page</button>
+<a style="color: white;" href="editproject.php"><button class="button is-primary is-fullwidth">Edit My Project Information</button></a>
+<a style="color: black;" href="user_page.php"><button class="button is-fullwidth">Back to Previous Page</button></a>
 </div>
 </body>
 
