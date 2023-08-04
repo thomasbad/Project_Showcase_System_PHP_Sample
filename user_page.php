@@ -3,16 +3,15 @@
 @include 'lib/connect.php';
 @include 'lib/loadprofile.php';
 
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
+if (!isset($_SESSION)) {
+   session_start();
 }
 
-if(!isset($_SESSION['user_name'] )){
+if (!isset($_SESSION['user_name'])) {
    header('location:index.php');
 }
 
-if($_SESSION['user_type'] != 'student'){
+if ($_SESSION['user_type'] != 'student') {
    header('location:index.php');
 }
 
@@ -20,6 +19,7 @@ if($_SESSION['user_type'] != 'student'){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,34 +31,36 @@ if($_SESSION['user_type'] != 'student'){
 
 <header>
 
-&emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
+   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
 
 </header>
 
-<body>   
-<div class="container">
-   <div class="content">
-      <h1>Hi, <span><?php echo $_SESSION['first_name'], ' ', $_SESSION['last_name'] ?></span> !</h1>
-      <p>Welcome Back to the HKIT Project Showcase System.</p><br>
-      <a href="editprofile.php" class="btn">
-      <img src='img/editprofile.svg'>
-      <br> 
-      Edit Profile
-      </a>
-      <a href="showcase.php" class="btn">
-      <img src='img/showcase.svg'>
-      <br>
-      Project Showcase</a>
-      <a href="changepwd.php" class="btn">
-      <img src='img/changepwd.svg'>
-      <br>
-      Change Password</a>
-      <a href="logout.php" class="btn">
-      <img src='img/logout.svg'>
-      <br>
-      logout</a>
+<body>
+   <div class="container">
+      <div class="content">
+         <h1>Hi, <span>
+               <?php echo $_SESSION['first_name'], ' ', $_SESSION['last_name'] ?>
+            </span> !</h1>
+         <p>Welcome Back to the HKIT Project Showcase System.</p><br>
+         <a href="editprofile.php" class="btn">
+            <img src='img/editprofile.svg'>
+            <br>
+            Edit Profile
+         </a>
+         <a href="showcase.php" class="btn">
+            <img src='img/showcase.svg'>
+            <br>
+            Project Showcase</a>
+         <a href="changepwd.php" class="btn">
+            <img src='img/changepwd.svg'>
+            <br>
+            Change Password</a>
+         <a href="logout.php" class="btn">
+            <img src='img/logout.svg'>
+            <br>
+            logout</a>
+      </div>
    </div>
-</div>
 </body>
 
 </html>

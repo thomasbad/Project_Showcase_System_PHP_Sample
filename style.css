@@ -1,212 +1,210 @@
-
-
-*{
-   font-family: 'Poppins', sans-serif;
-   margin:0; padding:0;
-   box-sizing: border-box;
-   outline: none; border:none;
-   text-decoration: none;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
 }
 
 header {
-   background-color: #004d99;
-   width: 100%;
+  background-color: #004d99;
+  width: 100%;
 }
 
-.container{
-   min-height: 100vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding:20px;
-   padding-bottom: 60px;
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 60px;
 }
 
-.container .content{
-   text-align: center;
+.container .content {
+  text-align: center;
 }
 
-.container .content h3{
-   font-size: 30px;
-   color:#333;
+.container .content h3 {
+  font-size: 30px;
+  color: #333;
 }
 
-.container .content h3 span{
-    background: #004d99;
-    color:#fff;
-    border-radius: 5px;
-    padding:0 15px;
- }
-
- .container .content h1{
-    font-size: 50px;
-    color:#333;
- }
- 
- .container .content h1 span{
-    color:#004d99;
- }
-
- .container .content p{
-    font-size: 25px;
-    margin-bottom: 20px;
- }
- 
- .container .content .btn{
-    display: inline-block;
-    padding:10px 30px;
-    font-size: 20px;
-    background: #095CA4;
-    color:#fff;
-    margin:5px 5px;
-    text-transform: capitalize;
- }
-
- 
-
- .container .content .btn:hover{
-    background: #137ad3;
- }
-
- .form-container{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:20px;
-    padding-bottom: 60px;
-    background: #eee;
- }
- 
- .form-container form{
-    padding:20px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    background: #fff;
-    text-align: center;
-    width: 600px;
- }
- 
- .form-container form h3{
-    font-size: 30px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    color:#333;
- }
- 
- .form-container form input,
- .form-container form select{
-    width: 80%;
-    padding:10px 15px;
-    font-size: 17px;
-    margin:8px 0;
-    background: #eee;
-    border-radius: 5px;
- }
-
- 
- .form-container form select option{
-    background: #fff;
- }
- 
- .form-container form .form-btn{
-    background: #c4dcf5;
-    color:#004d99;
-    text-transform: capitalize;
-    font-size: 20px;
-    cursor: pointer;
- }
-
- .form-container form .cancel-btn{
-   background: #bddbfc;
-   color:#ffffff;
-   text-transform: capitalize;
-   font-size: 20px;
-   cursor: pointer;
+.container .content h3 span {
+  background: #004d99;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 15px;
 }
- 
- .form-container form .form-btn:hover{
-    background: #004d99;
-    color:#fff;
- }
- 
- .form-container form p{
-    margin-top: 10px;
-    font-size: 20px;
-    color:#333;
- }
- 
- .form-container form p a{
-    color:#004d99;
- }
- 
- .form-container form .error-msg{
-    margin:10px 0;
-    display: block;
-    background: crimson;
-    color:#fff;
-    border-radius: 5px;
-    font-size: 20px;
-    padding:10px;
- }
 
- .input[type=button]:hover {
-   background-color: green;
- }
+.container .content h1 {
+  font-size: 50px;
+  color: #333;
+}
 
- #myInput {
-   background-image: url('/img/searchicon.png'); /* Add a search icon to input */
-   background-position: 10px 12px; /* Position the search icon */
-   background-repeat: no-repeat; /* Do not repeat the icon image */
-   width: 100%; /* Full-width */
-   font-size: 16px; /* Increase font-size */
-   padding: 12px 20px 12px 40px; /* Add some padding */
-   border: 1px solid #ddd; /* Add a grey border */
-   margin-bottom: 12px; /* Add some space below the input */
- }
- 
- #myTable {
-   border-collapse: collapse; /* Collapse borders */
-   width: 100%; /* Full-width */
-   border: 1px solid #ddd; /* Add a grey border */
-   font-size: 18px; /* Increase font-size */
- }
- 
- #myTable th, #myTable td {
-   text-align: left; /* Left-align text */
-   padding: 12px; /* Add padding */
- }
- 
- #myTable tr {
-   /* Add a bottom border to all table rows */
-   border-bottom: 1px solid #ddd;
- }
- 
- #myTable tr.header, #myTable tr:hover {
-   /* Add a grey background color to the table header and on hover */
-   background-color: #f1f1f1;
- }
+.container .content h1 span {
+  color: #004d99;
+}
 
- .table-container {
-   width: 100%;
-   overflow: scroll;
- }
- table {
-   width: 100%;
- }
+.container .content p {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
 
- th button {
-   background-color: #5b5dff;
-   border: none;
-   cursor: pointer;
-   display: block;
-   font: inherit;
-   height: 100%;
-   margin: 0;
-   min-width: max-content;
-   padding: 0.5rem 1rem;
-   position: relative;
-   text-align: left;
-   width: 100%;
- }
- 
+.container .content .btn {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 20px;
+  background: #095ca4;
+  color: #fff;
+  margin: 5px 5px;
+  text-transform: capitalize;
+}
+
+.container .content .btn:hover {
+  background: #137ad3;
+}
+
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 60px;
+  background: #eee;
+}
+
+.form-container form {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  text-align: center;
+  width: 600px;
+}
+
+.form-container form h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-container form input,
+.form-container form select {
+  width: 80%;
+  padding: 10px 15px;
+  font-size: 17px;
+  margin: 8px 0;
+  background: #eee;
+  border-radius: 5px;
+}
+
+.form-container form select option {
+  background: #fff;
+}
+
+.form-container form .form-btn {
+  background: #c4dcf5;
+  color: #004d99;
+  text-transform: capitalize;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-container form .cancel-btn {
+  background: #bddbfc;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-container form .form-btn:hover {
+  background: #004d99;
+  color: #fff;
+}
+
+.form-container form p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.form-container form p a {
+  color: #004d99;
+}
+
+.form-container form .error-msg {
+  margin: 10px 0;
+  display: block;
+  background: crimson;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.input[type="button"]:hover {
+  background-color: green;
+}
+
+#myInput {
+  background-image: url("/img/searchicon.png"); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th,
+#myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header,
+#myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+
+.table-container {
+  width: 100%;
+  overflow: scroll;
+}
+table {
+  width: 100%;
+}
+
+th button {
+  background-color: #5b5dff;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  height: 100%;
+  margin: 0;
+  min-width: max-content;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
