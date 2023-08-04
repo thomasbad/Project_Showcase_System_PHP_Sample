@@ -27,14 +27,27 @@ if(isset($_POST['changepass'])){
    $row = mysqli_fetch_array($result);
 
    if($row['password'] != $oldpass){
-      $error[] = 'Old Password Wrong !';
+      ?>
+                <script>
+				alert('Old Password Wrong !');
+				</script>
+                <?php
    }else{
       if($newpass != $cnewpass){
-         $error[] = 'New Password Not Matched!';
+         ?>
+                <script>
+				alert('New Password not match !');
+				</script>
+                <?php
       }else{
          $update = "UPDATE user_account SET password = '$newpass' WHERE username = '$username'";
          mysqli_query($conn, $update);
-         header('location:admin_page.php');   
+         ?>
+                <script>
+				alert('Password Change Successfully !');
+				window.location.href='admin_page.php';
+				</script>
+                <?php  
       }
    }
 

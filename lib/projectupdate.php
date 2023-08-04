@@ -49,13 +49,22 @@ if(!isset($_SESSION))
         if($sql2)
         { 
            /*Successful*/
-           echo '<script>alert("Profile Updated!")</script>';
-           header('location:../showcase.php');
+           ?>
+                <script>
+				alert('Profile Updated !');
+				window.location.href='showcase.php';
+				</script>
+                <?php 
         }
         else
         {
            /*sorry your profile is not update*/
-           echo '<script>alert("Error Ecountered, Profile not update.")</script>';
+           ?>
+                <script>
+				alert('Error Ecountered, Profile would not update.');
+				window.location.href='showcase.php';
+				</script>
+                <?php 
         }
     }
  }   

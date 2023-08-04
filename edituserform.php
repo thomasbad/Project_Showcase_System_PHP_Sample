@@ -20,6 +20,20 @@ if($_SESSION['user_type'] != 'admin'){
     header('location:index.php');
  } 
 
+ if(isset($_GET['edit_id']) && !empty($_GET['edit_id']))
+ {
+    $id = $_GET['edit_id'];
+    $stmt_edit = $DB_con->prepare('SELECT username, description, userprofile FROM users WHERE userid =:uid');
+    $stmt_edit->execute(array(':uid'=>$id));
+    $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+    extract($edit_row);
+ }
+ else
+ {
+    header("Location: index.php");
+ }
+
+
 if(isset($_POST['submit'])){
 
    $username = $_POST['username'];
@@ -58,12 +72,7 @@ if(isset($_POST['submit'])){
          $insert2 = "INSERT INTO user_account(username, password, user_type) VALUES('$username', '$cpass', '$user_type')";
          mysqli_query($conn, $insert);
          mysqli_query($conn, $insert2);
-				?>
-                <script>
-				alert('New User Added Successfully !');
-				window.location.href='admin_page.php';
-				</script>
-                <?php
+         header('location:admin_page.php'); 
       }
    }
 };

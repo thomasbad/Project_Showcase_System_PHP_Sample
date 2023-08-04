@@ -29,8 +29,12 @@ if(!isset($_SESSION))
 if($sql2)
        { 
            /*Successful*/
-           echo '<script>alert("Profile Updated!")</script>';
-           header('location:../user_page.php');
+           ?>
+                <script>
+				alert('Profile Updated !');
+				window.location.href='user_page.php';
+				</script>
+                <?php  
        }
        else
        {
