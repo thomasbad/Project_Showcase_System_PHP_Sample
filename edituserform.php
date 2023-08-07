@@ -1,11 +1,5 @@
 <?php
-
-$dbservername = "localhost";
-$dbuser = "admin";
-$dbpass = "adminpassword";
-$dbname = "showcasedb";
-global $conn;
-$conn = mysqli_connect($dbservername, $dbuser, $dbpass, $dbname);
+@include 'lib/connect.php';
 
 if (!isset($_SESSION)) {
    session_start();
@@ -86,7 +80,7 @@ if (isset($_POST['submit'])) {
          alert('User Profile Update Successfully !');
          window.location.href = 'edituser.php';
       </script>
-   <?php
+      <?php
    }
 }
 ;
@@ -94,24 +88,10 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Register New User</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<header>
-
-   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-
-</header>
+<?php
+@include 'header.php';
+@include 'banner_admin.php';
+?>
 
 <body>
 
@@ -128,11 +108,11 @@ if (isset($_POST['submit'])) {
          }
          ;
          ?>
-         <input type="text" name="fname" required placeholder="Enter user's First Name" value="<?php echo $ffname ?>">
-         <input type="text" name="mname" placeholder="Enter user's Middle Name" value="<?php echo $mmname ?>">
-         <input type="text" name="lname" required placeholder="Enter user's Last Name" value="<?php echo $llname ?>">
+         <input type="text" name="fname" required placeholder="Enter user's first name" value="<?php echo $ffname ?>">
+         <input type="text" name="mname" placeholder="Enter user's middle name" value="<?php echo $mmname ?>">
+         <input type="text" name="lname" required placeholder="Enter user's last name" value="<?php echo $llname ?>">
          <select id="departmentlist" name="dname" required>
-            <option selected disabled>-----Choose User's department-----</option>
+            <option selected disabled>-----Choose user's department-----</option>
             <option value="Art and Design">Art and Design</option>
             <option value="Creative Media Technology">Creative Media Technology</option>
             <option value="Built Environment">Built Environment</option>
@@ -147,7 +127,7 @@ if (isset($_POST['submit'])) {
          <!----------------course selector------------------------------>
 
          <select name="cname" style='display:'>
-            <option id="c0" selected disabled style='display:'>-----Choose User's Course-----</option>
+            <option id="c0" selected disabled style='display:'>-----Choose user's course-----</option>
             <option id="c1" style='display:none' value="Higher Diploma of Art & Design">Higher Diploma of Art & Design
             </option>
             <option id="c2" style='display:none' value="Bachelor of Creative Media">Bachelor of Creative Media</option>
@@ -166,7 +146,7 @@ if (isset($_POST['submit'])) {
 
          <!----------------end of course selector--------------------------->
          <select class="form-select" id="year" name="gradyr" required>
-            <option value="" selected disabled>-----Choose Graduated Year-----</option>
+            <option value="" selected disabled>-----Choose graduation year-----</option>
             <option value="9999">None</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>
@@ -197,19 +177,19 @@ if (isset($_POST['submit'])) {
             <option value="2049">2049</option>
             <option value="2050">2050</option>
          </select>
-         <input type="text" name="username" disabled placeholder="Enter User's Login ID"
+         <input type="text" name="username" disabled placeholder="Enter user's login ID"
             value="<?php echo $username ?>">
-         <input type="password" name="password" required placeholder="Change User's password">
+         <input type="password" name="password" required placeholder="Change user's password">
          <input type="password" name="cpassword" required placeholder="Confirm password again">
 
          <select name="user_type" required>
-            <option selected disabled>-----Choose Account Permission-----</option>
+            <option selected disabled>-----Choose account permission-----</option>
             <option value="guest">Guest</option>
             <option value="student">Student</option>
             <option value="admin">Administrator</option>
          </select>
          <input type="submit" name="submit" value="Update User Profile" class="form-btn">
-         <button class="button" style="width: 450px"><a style="color: black;" href="edituser.php">Back to Edit User
+         <button class="button" style="width: 450px"><a style="color: black" href="edituser.php">Back to Edit User
                Page</button>
       </form>
 

@@ -11,11 +11,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Showcase</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bulma/0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
     tr:nth-child(even) {
-      background-color: #D6EEEE;
+      background-color: #ddd;
+    }
+    tr:nth-child(odd) {
+      background-color: #fff;
     }
 
     td {

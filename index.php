@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
       $row = mysqli_fetch_array($result);
 
-      // admin or student page
+      // admin, student or guest page
 
       if ($row['user_type'] == 'admin') {
          $_SESSION['user_type'] = $row['user_type'];
@@ -39,29 +39,17 @@ if (isset($_POST['submit'])) {
 
       }
    } else {
-      $error[] = 'incorrect username or password!';
+      $error[] = 'Incorrect username or password!';
    }
 
 }
 ;
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>HKIT Project Showcase System - Login</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<header>
-   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-</header>
+<?php
+@include 'header.php';
+@include 'banner_index.php';
+?>
 
 <body>
 
@@ -80,9 +68,9 @@ if (isset($_POST['submit'])) {
          ?>
          <input type="username" name="username" required placeholder="Enter your username">
          <input type="password" name="password" required placeholder="Enter your password">
-         <input type="submit" name="submit" value="login now" class="form-btn"><br>
-         <button class="button is-primary is-hlafwidth" onclick="popup()"><a style="color: white;"
-               href="editproject.php">View Demo Account for this Demo</button>
+         <input type="submit" name="submit" value="login" class="form-btn"><br><br>
+         <button class="button is-link is-halfwidth" onclick="popup()"><a style="color: white;"
+               href="editproject.php">View Account for This Demo</button>
       </form>
    </div>
 

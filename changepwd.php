@@ -46,7 +46,7 @@ if (isset($_POST['changepass'])) {
             alert('Password Change Successfully !');
             window.location.href = 'user_page.php';
          </script>
-      <?php
+         <?php
       }
    }
 
@@ -55,24 +55,10 @@ if (isset($_POST['changepass'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Change Password</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<header>
-
-   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-
-</header>
+<?php
+@include 'header.php';
+@include 'banner_user.php';
+?>
 
 <body>
 
@@ -88,7 +74,7 @@ if (isset($_POST['changepass'])) {
          <input class="input is-info" type="password" name="cnewpass" required
             placeholder="Retype your New Password again">
          <br><br>
-         <input type="submit" name="changepass" value="Update My Password" class="form-btn" style="color: white">
+         <input type="submit" name="changepass" value="Update Your Password" class="form-btn" style="color: white">
          <input type="button" value="Cancel" onclick="history.back()" class="cancel-btn">
       </form>
 

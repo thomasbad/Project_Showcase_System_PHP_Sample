@@ -1,7 +1,7 @@
 <?php
 $DB_HOST = 'localhost';
-$DB_USER = 'admin';
-$DB_PASS = 'adminpassword';
+$DB_USER = 'root';
+$DB_PASS = '';
 $DB_NAME = 'showcasedb';
 
 try {
@@ -36,28 +36,15 @@ if (isset($_GET['delete_id'])) {
 	header("Location: edituser.php");
 }
 ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Edit User Profile</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<style>
-		header {
-			background-color: #004d99;
-			width: 100%;
-		}
-	</style>
-</head>
-
-<header>
-	&emsp;&emsp;<a href="admin_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-</header>
+<?php
+@include 'header.php';
+@include 'banner_admin.php';
+?>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
 <body>
-	<div class="container">
+	<div class="container" style="display:block;">
 		<h1 align="center">Edit / Remove User Profile</h1>
 		<div class="page-header">
 			<h1 class="h2">&nbsp; List of Members<a class="btn btn-success" href="adduser.php"
@@ -74,9 +61,10 @@ if (isset($_GET['delete_id'])) {
 					?>
 					<div class="col-xs-3" style="height: 500px">
 						<div style="height: 100px">
-							<h4 class="page-header" style="background-color:cadetblue" align="center">
+							<h4 class="page-header" style="background-color:#11408e;height: 90px;font-size: 20px;color: white;"
+								align="center">
 								<?php echo $firstname . " " . $lastname . "<br>" . $username . "<br>" . $course_name; ?>
-								</h3>
+							</h4>
 						</div>
 						<img src="img/profile_pic.png" class="img-responsive" />
 						<hr>

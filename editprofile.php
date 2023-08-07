@@ -15,24 +15,10 @@ if ($_SESSION['user_type'] != 'student') {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Edit Profile</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-   <link rel="stylesheet" href="style.css">
-
-</head>
-
-<header>
-
-   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-
-</header>
+<?php
+@include 'header.php';
+@include 'banner_user.php';
+?>
 
 <body>
 
@@ -56,7 +42,7 @@ if ($_SESSION['user_type'] != 'student') {
          <label class="label" style="text-align:left">Introduction: </label>
          <input class="input is-primary" type="text" name="self_intro" required
             placeholder="Enter the introduction for yourself" value="<?php echo $_SESSION['self_intro'] ?>">
-         <input type="submit" name="editprofile" value="Update My Profile" class="form-btn">
+         <input type="submit" name="editprofile" value="Update Your Profile" class="form-btn">
          <input type="button" value="Cancel" onclick="history.back()" class="cancel-btn">
       </form>
 

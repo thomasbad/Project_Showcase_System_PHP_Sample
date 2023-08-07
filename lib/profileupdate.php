@@ -1,8 +1,8 @@
 <?php
 
 $dbservername = "localhost";
-$dbuser = "admin";
-$dbpass = "adminpassword";
+$dbuser = "root";
+$dbpass = "";
 $dbname = "showcasedb";
 $conn = mysqli_connect($dbservername, $dbuser, $dbpass, $dbname);
 
@@ -30,7 +30,7 @@ if (isset($_POST['editprofile'])) {
                 alert('Profile Updated !');
                 window.location.href = '../user_page.php';
             </script>
-        <?php
+            <?php
         } else {
             /*sorry your profile is not update*/
             echo '<script>alert("Error Ecountered, Profile not update.")</script>';

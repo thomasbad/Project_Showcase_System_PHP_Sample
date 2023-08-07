@@ -13,6 +13,13 @@ header {
   width: 100%;
 }
 
+body {
+  background: url("img/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -56,9 +63,10 @@ header {
   display: inline-block;
   padding: 10px 30px;
   font-size: 20px;
-  background: #095ca4;
+  background: #6987a5d7;
   color: #fff;
   margin: 5px 5px;
+  border-radius: 20px;
   text-transform: capitalize;
 }
 
@@ -73,7 +81,6 @@ header {
   justify-content: center;
   padding: 20px;
   padding-bottom: 60px;
-  background: #eee;
 }
 
 .form-container form {
@@ -116,7 +123,7 @@ header {
 
 .form-container form .cancel-btn {
   background: #bddbfc;
-  color: #ffffff;
+  color: #757985;
   text-transform: capitalize;
   font-size: 20px;
   cursor: pointer;
@@ -178,12 +185,16 @@ header {
 #myTable tr {
   /* Add a bottom border to all table rows */
   border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
 }
 
-#myTable tr.header,
+#myTable tr.header {
+  background-color: #004d99;
+}
+
 #myTable tr:hover {
   /* Add a grey background color to the table header and on hover */
-  background-color: #f1f1f1;
+  background-color: #cdceff;
 }
 
 .table-container {
@@ -207,4 +218,25 @@ th button {
   position: relative;
   text-align: left;
   width: 100%;
+}
+
+.prepage {
+  font-size: 20px;
+  color: white;
+  padding: 2px;
+  text-decoration: none;
+}
+
+.prepage img {
+  width: 40px;
+}
+
+.prepage:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.prepage:hover img {
+  width: 42px;
 }

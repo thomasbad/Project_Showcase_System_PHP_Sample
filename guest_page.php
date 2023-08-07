@@ -17,23 +17,10 @@ if ($_SESSION['user_type'] != 'guest') {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>HKIT Project Showcase System</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-   <link rel="stylesheet" href="style.css">
-</head>
-
-<header>
-
-   &emsp;&emsp;<a href="user_page.php"><img src="img/logo.svg" width="250" height="180"></a>
-
-</header>
+<?php
+@include 'header.php';
+@include 'banner_guest.php';
+?>
 
 <body>
    <div class="container">
@@ -41,7 +28,7 @@ if ($_SESSION['user_type'] != 'guest') {
          <h1>Hi, <span>
                <?php echo $_SESSION['first_name'] ?>
             </span> !</h1>
-         <p>Welcome Back to the HKIT Project Showcase System.</p><br>
+            <p><font color="black">Welcome Back to the HKIT Project Showcase System.</font></p><br>
          <a href="showcase_guest.php" class="btn">
             <img src='img/showcase.svg'>
             <br>

@@ -1,7 +1,7 @@
 <?php
 $dbservername = "localhost";
-$dbuser = "admin";
-$dbpass = "adminpassword";
+$dbuser = "root";
+$dbpass = "";
 $dbname = "showcasedb";
 global $conn;
 $conn = mysqli_connect($dbservername, $dbuser, $dbpass, $dbname);

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2023 at 10:31 AM
+-- Generation Time: Aug 07, 2023 at 11:25 AM
 -- Server version: 5.7.17
 -- PHP Version: 7.1.3
 
@@ -94,8 +94,8 @@ CREATE TABLE `document_upload` (
 --
 
 INSERT INTO `document_upload` (`DOID`, `username`, `file_id`, `project_showcase`) VALUES
-(1, 'tomchan', 'https://drive.google.com/file/d/1aORecQpIOYMpbGGx5kPihZXH_oqUIdI7/view?usp=drive_link', 'How Exit Interview good to HR'),
-(2, 'maryyeung', 'https://drive.google.com/file/d/1fzX56MeDg7uVRCqkd3W6LM4cDw3DnTKT/view?usp=drive_link', 'World history\'s building'),
+(1, 'tomchan', 'https://drive.google.com/file/d/1aORecQpIOYMpbGGx5kPihZXH_oqUIdI7/view?usp=drive_link', 'How Exit Interview good to HR department'),
+(2, 'maryyeung', 'https://drive.google.com/file/d/1fzX56MeDg7uVRCqkd3W6LM4cDw3DnTKT/view?usp=drive_link', 'History of world great building'),
 (3, 'peterchow', 'https://drive.google.com/file/d/1bLmql47eaN87VK8Yf6ometkVIc_-9URU/view?usp=drive_link', 'Calculation of brain wave'),
 (4, 'lily1990', 'https://drive.google.com/file/d/1eTWF97-zR6Fa-qr60W9RiY6xuAIqLgf5/view?usp=drive_link', 'Golden Art method on Design'),
 (5, 'candy8989', 'https://drive.google.com/file/d/1Jc3-kt39EvmIP0VKWJJd_zy9VVyAtj1D/view?usp=drive_link', 'History of Fruit Drawing');

@@ -1,8 +1,8 @@
 <?php
 
 $dbservername = "localhost";
-$dbuser = "admin";
-$dbpass = "adminpassword";
+$dbuser = "root";
+$dbpass = "";
 $dbname = "showcasedb";
 $conn = mysqli_connect($dbservername, $dbuser, $dbpass, $dbname);
 
@@ -32,7 +32,7 @@ if (isset($_POST['editproject'])) {
                 alert('Profile Updated !');
                 window.location.href = '../showcase.php';
             </script>
-        <?php
+            <?php
         } else {
             /*sorry your profile is not update*/
             ?>
@@ -40,7 +40,7 @@ if (isset($_POST['editproject'])) {
                 alert('Error Ecountered, Profile would not update.');
                 window.location.href = '../showcase.php';
             </script>
-        <?php
+            <?php
         }
 
     } else if (mysqli_num_rows($updateprojresult) > 0) {
@@ -54,7 +54,7 @@ if (isset($_POST['editproject'])) {
                     alert('Profile Updated !');
                     window.location.href = '../showcase.php';
                 </script>
-        <?php
+            <?php
         } else {
             /*sorry your profile is not update*/
             ?>
@@ -62,7 +62,7 @@ if (isset($_POST['editproject'])) {
                     alert('Error Ecountered, Profile would not update.');
                     window.location.href = '../showcase.php';
                 </script>
-        <?php
+            <?php
 
         }
     } else {
