@@ -7,6 +7,6 @@ Very messy as rushing this within 4 days, needs to clean up before using it.
 
 After import the db from showcasedb.sql, please make sure to create the account with below information:
 
-DB ID: admin
+DB ID: root
 
-DB Password: adminpassword
+DB Password: "blank"
