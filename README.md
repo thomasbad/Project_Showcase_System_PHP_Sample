@@ -13,3 +13,7 @@ After import the db from showcasedb.sql, please make sure to create the account 
 DB ID: root
 
 DB Password: "blank"
+
+## Demo
+http://hkitshowcasesample.mypressonline.com/
+(Please try to not edit anything inside, or revert the setting after editing, which would save me sometimes and help the others, thanks)
