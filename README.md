@@ -3,7 +3,7 @@
 A simple PHP Website sample to create a simple final project showcase system with pure PHP, HTML and CSS without any PHP Framework, created because of my HKIT CS418 homework.
 Very messy as rushing this within 4 days, needs to clean up before using it.
 
-![image](https://github.com/thomasbad/Project_Showcase_System_PHP_Sample/assets/20796385/21d74934-2ba8-4437-9923-1c9c4b2020a9)
+![image](https://github.com/thomasbad/Project_Showcase_System_PHP_Sample/assets/20796385/36a1bb87-31e1-4ef6-8b1f-bc3e7db226e8)
 
 
 --------------------------------------------------------------------------------------
